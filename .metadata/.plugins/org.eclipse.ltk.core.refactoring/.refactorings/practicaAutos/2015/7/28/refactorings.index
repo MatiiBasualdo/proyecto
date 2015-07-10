@@ -1,0 +1,4 @@
+1436204560669	Extract method 'convertirNaftaActualAKilometros'
+1436204865386	Rename field 'nafta'
+1436206475669	Extract method 'tieneRestoTanque'
+1436206695777	Rename field 'tanqueDeNafta'

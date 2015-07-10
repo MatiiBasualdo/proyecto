@@ -1,0 +1,39 @@
+package Ventanas;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class ventana1 extends JFrame implements ActionListener{
+	private Button b1;
+	private Button b2;
+	private Button b3;
+	
+	public ventana1(){
+		super("esta es la ventana 1");
+		setLayout(null);
+		b1 = new Button("Salir");
+		b1.setBounds(330, 400, 50, 70);
+		add(b1);
+		b2 = new Button("Nose");
+		add(b2);
+		b3 = new Button("Algo se me va a ocurrir");
+		add(b3);
+		setSize(400,300);
+		setVisible(true);
+	}
+	
+	public static void main(String[] args) {
+		ventana1 v1 = new ventana1();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		 if (e.getSource()==b1) {
+	            System.exit(0);
+	        }
+		
+	}
+}	

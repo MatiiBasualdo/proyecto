@@ -1,0 +1,84 @@
+package Ventanas;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextPane;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class ventana3 extends JFrame{
+
+	private JPanel contentPane;
+	public JTextField textField_1;
+	public JLabel lblValorNafta;
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ventana3 frame = new ventana3();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ventana3() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JButton btnManejar = new JButton("Manejar");
+		btnManejar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.setLayout(null);
+		btnManejar.setBounds(0, 0, 89, 23);
+		btnManejar.setHorizontalAlignment(SwingConstants.LEFT);
+		contentPane.add(btnManejar);
+		
+		textField_1 = new JTextField();
+		textField_1.setText("0");
+		textField_1.setBounds(321, 30, 113, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnPonernafta = new JButton("PonerNafta");
+		btnPonernafta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblValorNafta.setText(textField_1.getText());			
+			}
+		});
+		
+		btnPonernafta.setBounds(321, 0, 113, 23);
+		contentPane.add(btnPonernafta);
+		
+		JLabel lblNafta = new JLabel(" Nafta: ");
+		lblNafta.setBounds(0, 247, 46, 14);
+		contentPane.add(lblNafta);
+		
+		JLabel lblValorNafta = new JLabel("0");
+		lblValorNafta.setBounds(37, 247, 46, 14);
+		contentPane.add(lblValorNafta);
+	}
+}

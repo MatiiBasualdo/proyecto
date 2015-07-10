@@ -1,0 +1,20 @@
+package test;
+
+import static org.mockito.Mock.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+import model.Auto;
+
+public class AutoTest {
+	
+	@Test
+	public void manejar(){
+		Auto fordK = new Auto("Ford k", 5,150);
+		fordK.setNafta(100);
+		fordK.manejar(20);
+		assert (fordK.getKilometraje() == 20);
+		assertFalse(fordK.getNafta() == 98);
+	}
+	
+}

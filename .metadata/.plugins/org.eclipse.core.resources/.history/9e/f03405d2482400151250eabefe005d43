@@ -1,0 +1,44 @@
+package Ventanas;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class ventana1 extends JFrame implements ActionListener{
+	private Button b1;
+	private Button b2;
+	private Button b3;
+	
+	public ventana1(){
+		super("esta es la ventana 1");
+		setLayout(null);
+        b1=new Button("Finalizar");
+        b1.setBounds(300,250,100,30);
+        add(b1);
+        b1.addActionListener(this);
+        
+        b2 = new Button("Print 'Algo' ");
+        b2.setBounds(0, 0, 70, 50);
+        add(b2);
+        b2.addActionListener(this);
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		 if (e.getSource()==b1) {
+	            System.exit(0);
+		 }
+		 if(e.getSource()==b2){
+			 System.out.println("Puto");
+		 }
+		
+	}
+	
+	public static void main(String[] args) {
+		ventana1 v1 = new ventana1();
+		v1.setBounds(0, 0, 450, 350);
+		v1.setVisible(true);
+	}
+}	
